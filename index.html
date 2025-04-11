@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ScrapBay - Marketplace for Scrap Metal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">ScrapBay</div>
+      <div class="search-bar">
+        <input type="text" placeholder="Search for scrap metal...">
+        <button>Search</button>
+      </div>
+      <div class="nav-links">
+        <a href="#" id="sellBtn">Sell</a>
+        <a href="#" id="signInBtn">Sign In</a>
+        <a href="#" id="signUpBtn">Create Account</a>  <!-- New Sign-Up Button -->
+        <a href="#">Cart</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Sell Form Modal -->
+    <div id="sellForm" class="modal" style="display: none;">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Sell Your Scrap Metal</h2>
+        <form id="listingForm">
+          <input type="text" placeholder="Title" required>
+          <select required>
+            <option value="">Select Category</option>
+            <option value="steel">Steel</option>
+            <option value="copper">Copper</option>
+            <option value="aluminum">Aluminum</option>
+            <option value="iron">Iron</option>
+            <option value="brass">Brass</option>
+            <option value="electronics">Electronics</option>
+          </select>
+          <input type="number" placeholder="Price ($)" required>
+          <input type="text" placeholder="Location" required>
+          <input type="url" placeholder="Image URL" required>
+          <textarea placeholder="Description" required></textarea>
+          <button type="submit">List Item</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Sign In / Sign Up Modal -->
+    <div id="accountModal" class="modal" style="display: none;">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2 id="modalTitle">Sign In</h2>
+        <form id="accountForm">
+          <input type="email" id="email" placeholder="Email" required>
+          <input type="password" id="password" placeholder="Password" required>
+          <div id="confirmPasswordField" style="display: none;">
+            <input type="password" id="confirmPassword" placeholder="Confirm Password">
+          </div>
+          <button type="submit" id="accountSubmit">Sign In</button>
+        </form>
+        <p id="toggleForm">
+          Don't have an account? <a href="#" id="toggleLink">Sign Up</a>
+        </p>
+      </div>
+    </div>
+
+    <section class="featured">
+      <h2>Featured Listings</h2>
+      <div class="listings" id="listings">
+        <div class="empty-state">
+          <h3>No Listings Yet</h3>
+          <p>Be the first to sell your scrap metal!</p>
+          <button onclick="document.getElementById('sellForm').style.display='block'">Add Listing</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="categories">
+      <h2>Browse Categories</h2>
+      <div class="category-grid">
+        <div class="category">Steel</div>
+        <div class="category">Copper</div>
+        <div class="category">Aluminum</div>
+        <div class="category">Iron</div>
+        <div class="category">Brass</div>
+        <div class="category">Electronics</div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 ScrapBay. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
